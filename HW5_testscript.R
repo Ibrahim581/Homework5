@@ -16,6 +16,7 @@ test_that("check validity method exists", {
 })
 
 test_that("check validity method", {
+<<<<<<< HEAD
   expect_true({
     x <- new("sparse_numeric",
              value = c(1, 2, 3, 1),
@@ -34,6 +35,26 @@ test_that("check validity method 2", {
     x@length <- 2L
     validObject(x)
   })
+=======
+    expect_true({
+        x <- new("sparse_numeric",
+                 value = c(1, 2, 3, 1),
+                 pos = c(1L, 2L, 3L, 5L),
+                 length = 5L)
+        validObject(x)
+    })
+})
+
+test_that("check validity method 2", {
+    expect_error({
+        x <- new("sparse_numeric",
+                 value = c(1, 2, 3, 1),
+                 pos = c(1L, 2L, 3L, 5L),
+                 length = 5L)
+        x@length <- 2L
+        validObject(x)
+    })
+>>>>>>> b67ed9e36f28da9c18f67aac1b0cb68a279d5562
 })
 
 test_that("check coercion return class", {
